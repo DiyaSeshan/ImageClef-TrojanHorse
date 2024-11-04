@@ -7,7 +7,7 @@
 # from sklearn.linear_model import LogisticRegression
 # from sklearn.model_selection import train_test_split
 # from sklearn.metrics import precision_score, recall_score, f1_score
-# df = pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\orientation\orientation-all-data.tsv',sep='\t', encoding='ISO-8859-1')
+# df = pd.read_csv(r'filepathorientation\orientation-all-data.tsv',sep='\t', encoding='ISO-8859-1')
 # #print(df)
 # df['text_en'] = df['text_en'].str.lower()
 # X = np.array(df['text_en'])
@@ -75,7 +75,7 @@ oneCount=[]
 for i in l4:
     print(i)
     coun+=1
-    df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\orientation-'+i+'-train.tsv',sep='\t')
+    df=pd.read_csv(r'filepathorientation-'+i+'-train.tsv',sep='\t')
     zeroCount.append(len(df[df['label']==0]))
     oneCount.append(len(df[df['label']==1]))
     rowCount+=len(df)
@@ -109,7 +109,7 @@ print("Done 1s")
 # l3=[]
 # for i in l2:
 #     print(i)
-#     df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+#     df=pd.read_csv(r'filepathpower\power-'+i+'-train.tsv',sep='\t')
 #     df['text_en'] = df['text_en'].str.lower()
 #     print(len(df))
 #     df=df.drop(df[df['text_en'].isnull()].index)
@@ -134,7 +134,7 @@ print("Done 1s")
 #     print("Training Precision (Macro):", train_precision)
 #     print("Training Recall (Macro):", train_recall)
 #     print("Training F1-Score (Macro):", train_f1)
-#     df_test=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-test.tsv',sep='\t')
+#     df_test=pd.read_csv(r'filepathpower\power-'+i+'-test.tsv',sep='\t')
 #     df_test=df_test.drop(df_test[df_test['text_en'].isnull()].index)
 #     df_test['text_en'] = df_test['text_en'].str.lower()
 #     x_test = np.array(df_test['text_en'])
@@ -143,7 +143,7 @@ print("Done 1s")
 #     print("Test data predictions:")
 #     print(yhat_test[15])
 #     df_test['logreg']=yhat_test
-#     df_test.to_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-pred_v10.tsv',sep='\t')
+#     df_test.to_csv(r'filepathpower\power-'+i+'-pred_v10.tsv',sep='\t')
 #     print("done")
 
 
@@ -158,7 +158,7 @@ print("Done 1s")
 # l3=[]
 # for i in l2:
 #     print(i)
-#     df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+#     df=pd.read_csv(r'filepathpower\power-'+i+'-train.tsv',sep='\t')
 #     df['text_en'] = df['text_en'].str.lower()
 #     df=df.drop(df[df['text_en'].isnull()].index)
 #     df.dropna(how="any",inplace=True)
@@ -187,7 +187,7 @@ print("Done 1s")
 #     print("Training Precision (Macro):", train_precision)
 #     print("Training Recall (Macro):", train_recall)
 #     print("Training F1-Score (Macro):", train_f1)
-#     df_test=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-test.tsv',sep='\t')
+#     df_test=pd.read_csv(r'filepathpower\power-'+i+'-test.tsv',sep='\t')
 #     df_test=df_test.drop(df_test[df_test['text_en'].isnull()].index)
 #     df_test['text_en'] = df_test['text_en'].str.lower()
 #     x_test = np.array(df_test['text_en'])
@@ -196,7 +196,7 @@ print("Done 1s")
 #     print("Test data predictions:")
 #     print(yhat_test[15])
 #     df_test['logreg']=yhat_test
-#     df_test.to_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-pred_v10.tsv',sep='\t')
+#     df_test.to_csv(r'filepathpower\power-'+i+'-pred_v10.tsv',sep='\t')
 #     print("done")
 
 
