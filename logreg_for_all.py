@@ -7,7 +7,7 @@
 # from sklearn.linear_model import LogisticRegression
 # from sklearn.model_selection import train_test_split
 # from sklearn.metrics import precision_score, recall_score, f1_score
-# df = pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\orientation\orientation-all-data.tsv',sep='\t', encoding='ISO-8859-1')
+# df = pd.read_csv(r'filepathorientation\orientation-all-data.tsv',sep='\t', encoding='ISO-8859-1')
 # #print(df)
 # df['text_en'] = df['text_en'].str.lower()
 # X = np.array(df['text_en'])
@@ -68,7 +68,7 @@ l4=[ "fi", "fr", "gb", "gr", "hr", "hu", "it", "lv",
 l3=[]
 for i in l2:
     print(i)
-    df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+    df=pd.read_csv(r'filepath\power-'+i+'-train.tsv',sep='\t')
     df['text_en'] = df['text_en'].str.lower()
     print(len(df))
     df=df.drop(df[df['text_en'].isnull()].index)
@@ -93,7 +93,7 @@ for i in l2:
     print("Training Precision (Macro):", train_precision)
     print("Training Recall (Macro):", train_recall)
     print("Training F1-Score (Macro):", train_f1)
-    df_test=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-test.tsv',sep='\t')
+    df_test=pd.read_csv(r'filepath\power-'+i+'-test.tsv',sep='\t')
     df_test=df_test.drop(df_test[df_test['text_en'].isnull()].index)
     df_test['text_en'] = df_test['text_en'].str.lower()
     x_test = np.array(df_test['text_en'])
@@ -102,7 +102,7 @@ for i in l2:
     print("Test data predictions:")
     print(yhat_test[15])
     df_test['logreg']=yhat_test
-    df_test.to_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-pred_v10.tsv',sep='\t')
+    df_test.to_csv(r'filepath\power-'+i+'-pred_v10.tsv',sep='\t')
     print("done")
 
 avg=0
@@ -110,7 +110,7 @@ coun=0
 for i in l2:
     print(i)
     coun+=1
-    df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+    df=pd.read_csv(r'filepath\power-'+i+'-train.tsv',sep='\t')
     avg+=len(df)
     print(f"Length of df{coun}: ",len(df))
 print("Overall average:",avg/coun)
@@ -125,7 +125,7 @@ print("Overall average:",avg/coun)
 # l3=[]
 # for i in l2:
 #     print(i)
-#     df=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+#     df=pd.read_csv(r'path\power-'+i+'-train.tsv',sep='\t')
 #     df['text_en'] = df['text_en'].str.lower()
 #     df=df.drop(df[df['text_en'].isnull()].index)
 #     df.dropna(how="any",inplace=True)
@@ -154,7 +154,7 @@ print("Overall average:",avg/coun)
 #     print("Training Precision (Macro):", train_precision)
 #     print("Training Recall (Macro):", train_recall)
 #     print("Training F1-Score (Macro):", train_f1)
-#     df_test=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-test.tsv',sep='\t')
+#     df_test=pd.read_csv(rpathpower-'+i+'-test.tsv',sep='\t')
 #     df_test=df_test.drop(df_test[df_test['text_en'].isnull()].index)
 #     df_test['text_en'] = df_test['text_en'].str.lower()
 #     x_test = np.array(df_test['text_en'])
@@ -163,13 +163,13 @@ print("Overall average:",avg/coun)
 #     print("Test data predictions:")
 #     print(yhat_test[15])
 #     df_test['logreg']=yhat_test
-#     df_test.to_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-pred_v10.tsv',sep='\t')
+#     df_test.to_csv(r'path\power-'+i+'-pred_v10.tsv',sep='\t')
 #     print("done")
 
 
-#"C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-all-train.tsv"
+#"pathr\power-all-train.tsv"
 
-df=pd.read_csv(r"C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-all-train.tsv",sep='\t')
+df=pd.read_csv(r"filepath\power-all-train.tsv",sep='\t')
 df['text_en'] = df['text_en'].str.lower()
 print(len(df))
 df=df.drop(df[df['text_en'].isnull()].index)
@@ -184,7 +184,7 @@ logreg.fit(X_train, y_train)
 l3=[]
 trainavg=0
 for i in l2:
-    df2=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-train.tsv',sep='\t')
+    df2=pd.read_csv(r'filepath\power-'+i+'-train.tsv',sep='\t')
     df2=df2.drop(df2[df2['text_en'].isnull()].index)
     x_train2 = np.array(df2['text_en'])
     X_train2 = v.fit_transform(np.array(x_train2))
@@ -201,7 +201,7 @@ for i in l2:
     print("Training Recall (Macro):", train_recall)
     print("Training F1-Score (Macro):", train_f1)
     trainavg+=train_f1
-    # df_test=pd.read_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-test.tsv',sep='\t')
+    # df_test=pd.read_csv(r'filepath\power-'+i+'-test.tsv',sep='\t')
     # df_test=df_test.drop(df_test[df_test['text_en'].isnull()].index)
     # df_test['text_en'] = df_test['text_en'].str.lower()
     # x_test = np.array(df_test['text_en'])
@@ -210,5 +210,5 @@ for i in l2:
     # print("Test data predictions:")
     # print(yhat_test[15])
     # df_test['logreg']=yhat_test
-    # df_test.to_csv(r'C:\Users\Avaneesh Koushik\OneDrive - SSN-Institute\ImageCLEF\power\power-'+i+'-pred_v10.tsv',sep='\t')
+    # df_test.to_csv(r'filepath\power-'+i+'-pred_v10.tsv',sep='\t')
     # print("done")
