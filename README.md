@@ -24,4 +24,4 @@ docker build -t registry.webis.de/code-research/tira/tira-user-trojan-horses/git
 ```
 tira-run --input-dataset ideology-and-power-identification-in-parliamentary-debates-2024/toy-dataset-20240424-training --image registry.webis.de/code-research/tira/tira-user-trojan-horses/github-action-submission:0.0.1
 ```
-
+Link to our paper: https://ceur-ws.org/Vol-3740/paper-334.pdf
