@@ -98,7 +98,7 @@ labels = ["Zeroes", "Ones"]
 plt.bar(l4,zeroCount,alpha=0.5,color ='red')
 
 #plt.plot([k for k in range(1,coun+1)],oneCount)
-print("done 0s")
+print("Done 0s")
 plt.bar(l4,oneCount,color ='blue',alpha=0.75)
 plt.legend(labels, loc='upper left', title='Count')
 plt.xticks(l4, rotation=45)
